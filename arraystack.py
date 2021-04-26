@@ -46,9 +46,9 @@ class ArrayStack(AbstractStack):
     def push(self, item):
         """Inserts item at top of the stack."""
         # Resize array here if necessary
-        print(type(self), self._size)
+        # print(type(self), self._size)
         if len(self) == len(self._items):
-            print("grow")
+            # print("grow")
             self._items.grow()
             #temp = Array(2 * len(self))
             #for i in range(len(self)):
@@ -69,7 +69,7 @@ class ArrayStack(AbstractStack):
         # Resize the array here if necessary
         if len(self) <= len(self._items) // 4 and \
            len(self._items) >= 2 * ArrayStack.DEFAULT_CAPACITY:
-            print("shrink")
+            # print("shrink")
             #temp = Array(len(self._items) // 2)
             #for i in range(len(self)):
             #    temp [i] = self._items[i]

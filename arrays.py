@@ -18,7 +18,7 @@ class Array(object):
         """Capacity is the static size of the array.
         fillValue is placed at each position."""
         self._items = list()
-        for count in range(capacity):
+        for _ in range(capacity):
             self._items.append(fillValue)
 
     def __len__(self):
@@ -52,7 +52,7 @@ class ArrayExpanded(object):
         # Track the capacity and fill value for adjustments later
         self._capacity = capacity
         self._fillValue = fillValue
-        for count in range(capacity):
+        for _ in range(capacity):
             self._items.append(fillValue)
 
     def __len__(self):
@@ -89,7 +89,7 @@ class ArrayExpanded(object):
         """Increases the physical size of the array if necessary."""
         # Double the physical size if no more room for items
         # and add the fillValue to the new cells in the underlying list
-        for count in range(len(self)):
+        for _ in range(len(self)):
             self._items.append(self._fillValue)
 
     def shrink(self):
@@ -97,7 +97,7 @@ class ArrayExpanded(object):
         # Shrink the size by half but not below the default capacity
         # and remove those garbage cells from the underlying list
         newSize = max(self._capacity, len(self) // 2)
-        for count in range(len(self) - newSize):
+        for _ in range(len(self) - newSize):
             self._items.pop()
 
     def insert(self, index, newItem):
