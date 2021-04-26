@@ -10,7 +10,7 @@ class Palindrome:
         read_data = []
         with open(path, 'r') as words_path:
             for line in words_path:
-                line = line.split(' ')[0].strip()
+                line = line.strip().split(' ')[0]
                 read_data.append(line)
         return read_data
 
